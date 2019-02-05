@@ -11,7 +11,10 @@ export let fade = trigger('animation_name', [
     // transition('void<=>*', [
     //   animate(2000)
     // ])
-    transition(':enter,:leave', [
+    transition(':enter', [
       animate(2000)
+    ]),
+    transition(':leave', [
+        animate('0.5s ease-in-out', style({transform: 'translateX(-100%)'}))
     ])
   ]);
