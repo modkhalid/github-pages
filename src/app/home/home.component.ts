@@ -1,7 +1,8 @@
 import { ListService } from './../list.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, state } from '@angular/animations';
+// import { stat } from 'fs';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,13 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrls: ['./home.component.css'],
   animations: [
     trigger('animation_name', [
+      state('void', style({opacity: 0})),
       transition('void=>*', [
-        style({backgroundColor: 'red', opacity: 0}),
+        style({backgroundColor: 'red'}),
         animate(2000)
       ]),
       transition('*=>void', [
-        animate(2000, style({opacity: 0}))
+        animate(2000)
       ])
     ])
 
