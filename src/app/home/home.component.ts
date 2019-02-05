@@ -1,32 +1,15 @@
 import { ListService } from './../list.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { fade } from '../animations';
+
 // import { stat } from 'fs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  animations: [
-    trigger('animation_name', [
-      state('void', style({opacity: 0})),
-      // transition('void=>*', [
-      //   style({backgroundColor: 'red'}),
-      //   animate(2000)
-      // ]),
-      // transition('*=>void', [
-      //   animate(2000)
-      // ])
-      // transition('void<=>*', [
-      //   animate(2000)
-      // ])
-      transition(':enter,:leave',[
-        animate(2000)
-      ])
-    ])
-
-  ]
+  animations: [fade ]
 })
 export class HomeComponent implements OnInit {
   constructor(private fb: FormBuilder, private service: ListService) {
