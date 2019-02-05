@@ -1,0 +1,43 @@
+<input type="text"
+name="name"
+class="form-control"
+#mod
+(keyup.enter)="fun(mod)"
+>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of posts">
+    {{item}}
+  </li>
+</ul>
+<!-- <header id="navbar-head">
+  <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top" id="main-nav">
+      <div class="container">
+        <a routerLink="/" class="navbar-brand">
+          <img [src]="imgPath" alt="" width="40" height="40">
+          <div class="d-inline">
+              MakeUrWorld    
+          </div>
+        </a>
+        <button class="navbar-toggler" id="collapseButton" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse" [ngClass]="{ 'show': navbarOpen }">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" routerLinkActive="active" (click)="toggleNavbar()">
+              <a routerLink="/tour" class="nav-link">Tour</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" (click)="toggleNavbar()">
+              <a routerLink="/team" class="nav-link">Team</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" (click)="toggleNavbar()">
+              <a routerLink="/blog" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" (click)="toggleNavbar()">
+              <a routerLink="/reviews" class="nav-link">Reviews</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+</header> -->
