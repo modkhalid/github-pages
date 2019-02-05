@@ -6,10 +6,30 @@ class="form-control"
 >
 
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of posts">
+  <li class="list-group-item" *ngFor="let item of posts"
+  @animation_name
+  >
     {{item}}
   </li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <header id="navbar-head">
   <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top" id="main-nav">
       <div class="container">
