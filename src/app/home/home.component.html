@@ -8,6 +8,8 @@ class="form-control"
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let item of posts"
   @animation_name
+  #ele
+  (click)="remove(ele)"
   >
     {{item}}
   </li>

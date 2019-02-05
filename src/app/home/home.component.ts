@@ -12,6 +12,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
       transition('void=>*', [
         style({backgroundColor: 'red', opacity: 0}),
         animate(2000)
+      ]),
+      transition('*=>void', [
+        animate(2000, style({opacity: 0}))
       ])
     ])
 
@@ -26,14 +29,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  fun = ( var_name: HTMLInputElement) => {
-    // console.log(var_name.value);
 
+  fun = ( var_name: HTMLInputElement) => {
     this.posts.splice(0, 0, var_name.value);
     var_name.value = '';
   }
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
+  }
+  remove(ele: HTMLInputElement) {
+    this.posts.splice(this.posts.indexOf(ele.innerText), 1);
   }
 }
