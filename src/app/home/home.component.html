@@ -1,14 +1,14 @@
 <input type="text"
-name="name"
-class="form-control"
-#mod
-(keyup.enter)="fun(mod)"
+  name="name"
+  class="form-control"
+  #mod
+  (keyup.enter)="fun(mod)"
 >
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let item of posts"
-  @animation_name
   #ele
+  @fade
   (click)="remove(ele)"
   >
     {{item}}
