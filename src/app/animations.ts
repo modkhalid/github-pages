@@ -47,4 +47,3 @@ export let fade = trigger('fade', [
   ]),
 ]);
 
-
