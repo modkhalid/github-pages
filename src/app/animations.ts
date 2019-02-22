@@ -75,6 +75,7 @@ export let fade = trigger('fade', [
   // })),
 
   transition(':enter', [
+    // all the animatio like query ,animate ,useAnimation,style inside the group running parallel
     group([
       query('h1', [
         style({
