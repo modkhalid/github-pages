@@ -1,3 +1,4 @@
+
 import { trigger, transition, style, animate, state, animation, keyframes, useAnimation } from '@angular/animations';
 
 /*
@@ -45,5 +46,35 @@ export let fade = trigger('fade', [
     animate(500),
     useAnimation(bounceAnimation)
   ]),
+]);
+
+export let UseFadeIn = animation([
+  style({
+    backgroundColor: 'red',
+    opacity: 1
+  }),
+  animate('{{duration}} {{delay}}', keyframes([
+    style({
+      offset: 0.2,
+      opacity: 0.5,
+      transform: 'translateX(-20px)'
+    }),
+    style({
+      offset: 1,
+      opacity: 1,
+      transform: 'translateX(-100%)'
+    })
+  ]))
+], {
+  params: {
+    duration: '1s',
+    delay: '0.5s'
+  }
+});
+
+export let fadeIn = trigger('fadeIn', [
+  transition(':leave', [
+    useAnimation(UseFadeIn, {params: {duration: '5s'}})
+  ])
 ]);
 

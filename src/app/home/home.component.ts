@@ -1,4 +1,4 @@
-import { fade } from './../animations';
+import { fade, fadeIn } from './../animations';
 import { ListService } from './../list.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -10,7 +10,7 @@ import { trigger, transition, style , animate} from '@angular/animations';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   animations: [
-    fade
+    fade, fadeIn
   ]
 })
 export class HomeComponent implements OnInit {
