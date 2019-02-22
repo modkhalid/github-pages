@@ -19,9 +19,7 @@ export let bounceAnimation = animation(
     style({
       offset: 1,
       opacity: 0,
-      transform: 'translateX(-100%)'on)
-    ])
-  */
+      transform: 'translateX(-100%)'
     }),
   ]))
 );
