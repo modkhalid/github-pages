@@ -1,5 +1,8 @@
-
-import { trigger, transition, style, animate, state, animation, keyframes, useAnimation , query, animateChild, group} from '@angular/animations';
+import {  trigger, transition,
+          style, animate, state, animation,
+          keyframes, useAnimation , query,
+          animateChild, group
+} from '@angular/animations';
 
 /*
  animation fun create animation which can be use by any trigger>transition(':enter',[
@@ -70,21 +73,24 @@ export let fadeIn = trigger('fadeIn', [
 
 export let fade = trigger('fade', [
 
-  // state('void', style({
-  //   opacity: 0
-  // })),
+  state('void', style({
+    opacity: 0
+  })),
 
   transition(':enter', [
     // all the animatio like query ,animate ,useAnimation,style inside the group running parallel
-    group([
-      query('h1', [
-        style({
-          transform: 'translateY(-20px)'
-        }),
-        animate(1000)
-      ]),
-      query('@fadeIn', animateChild())
-    ])
+    // group([
+    //   query('h1', [
+    //     style({
+    //       transform: 'translateY(-20px)'
+    //     }),
+    //     animate(1000)
+    //   ]),
+
+    // ])
+    style({
+      backgroundColor: 'red'
+    })
     // useAnimation(UseFadeIn)
   ]),
 ]);
