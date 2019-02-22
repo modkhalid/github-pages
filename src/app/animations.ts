@@ -1,5 +1,5 @@
 
-import { trigger, transition, style, animate, state, animation, keyframes, useAnimation } from '@angular/animations';
+import { trigger, transition, style, animate, state, animation, keyframes, useAnimation , query, animateChild, group} from '@angular/animations';
 
 /*
  animation fun create animation which can be use by any trigger>transition(':enter',[
@@ -23,30 +23,8 @@ export let bounceAnimation = animation(
     }),
   ]))
 );
-export let fade = trigger('fade', [
-
-  state('void', style({
-    opacity: 0
-  })),
-
-  /*transition('void=>*', [
-    style({
-      backgroundColor: 'red',
-      // opacity: 0
-    }),
-    animate(2000)
-  ]),*/
 
 
-  transition('*=>void', [
-    style({
-      backgroundColor: 'yellow',
-      opacity: 1
-    }),
-    animate(500),
-    useAnimation(bounceAnimation)
-  ]),
-]);
 
 export let UseFadeIn = animation([
   style({
@@ -72,9 +50,43 @@ export let UseFadeIn = animation([
   }
 });
 
+
+export let UseFadeout = animation([
+  style({
+    opacity: 0,
+    backgroundColor: 'yellow'
+  }),
+  animate(200),
+
+]);
+
+
 export let fadeIn = trigger('fadeIn', [
   transition(':leave', [
-    useAnimation(UseFadeIn, {params: {duration: '5s'}})
-  ])
+    useAnimation(UseFadeIn, {params: {duration: '1s'}})
+  ]),
+  transition(':enter', useAnimation(UseFadeout))
 ]);
+
+export let fade = trigger('fade', [
+
+  // state('void', style({
+  //   opacity: 0
+  // })),
+
+  transition(':enter', [
+    group([
+      query('h1', [
+        style({
+          transform: 'translateY(-20px)'
+        }),
+        animate(1000)
+      ]),
+      query('@fadeIn', animateChild())
+    ])
+    // useAnimation(UseFadeIn)
+  ]),
+]);
+
+
 
