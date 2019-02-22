@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialComponent } from './material/material.component';
-
+import { RouterModule } from '@angular/router';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,22 @@ import { MaterialComponent } from './material/material.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: MaterialComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      }
+    ]),
+    MatCheckboxModule
   ],
   providers: [
     ListService
   ],
-  bootstrap: [AppComponent]
+  bootstrap : [AppComponent],
 })
 export class AppModule { }
