@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class MaterialComponent implements OnInit {
 
   constructor() { }
+  isChecked = false;
 
   ngOnInit() {
+  }
+  onChange(event) {
+    console.log(event.checked);
   }
 
 }

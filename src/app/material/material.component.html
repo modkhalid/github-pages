@@ -1,2 +1,14 @@
 <!-- <md-checkbox>hi this is first md-checkbox</md-checkbox> -->
-<mat-checkbox>hi khalid</mat-checkbox>
+<mat-checkbox
+  #Ele
+  [value]=45
+  [checked]="isChecked"
+  (change)="onChange($event)"
+>
+  SHOW DETAILS
+</mat-checkbox>
+
+<div *ngIf="Ele.checked">
+  detailes
+  --------
+</div>
